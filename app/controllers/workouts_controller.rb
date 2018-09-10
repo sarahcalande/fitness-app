@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.new(workout_params)
       if @workout.valid?
         @workout.save
+        byebug
         redirect_to @workout
       else
         render :new
@@ -26,7 +27,7 @@ class WorkoutsController < ApplicationController
 
   private
   def workout_params
-    params.require(:workout).permit(:name, :description, :instructions)
+    params.require(:workout).permit(:name, :description, :instructions, muscle_id: [])
   end
 
 
