@@ -10,12 +10,12 @@
   </head>
 
   <body>
-    <%= if logged_in? %>
+    <% if logged_in? %>
     <p> Welcome back </p>
     <%= button_to 'logout', '/logout', method: :delete %>
-    <%= else %>
+        <%= yield %>
+    <% else %>
     <%= link_to 'log in', login_path %>
     <% end %>
-    <%= yield %>
   </body>
 </html>

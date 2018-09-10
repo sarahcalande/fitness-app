@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    render :new
+    render :layout => false
   end
 
 
@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
     @user = User.find_by(username:params['username'])
     if @user && @user.authenticate(params['password'])
       session[:current_user_id] = @user.id
-      render :index
+      redirect_to @user
     else
       redirect_to '/login'
     end
   end
 
   def destroy
-    session.create :current_user_id
+    session.delete :current_user_id
     redirect_to '/login'
   end
 
