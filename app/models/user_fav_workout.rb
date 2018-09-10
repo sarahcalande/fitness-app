@@ -1,0 +1,2 @@
+class UserFavWorkout < ApplicationRecord
+end
