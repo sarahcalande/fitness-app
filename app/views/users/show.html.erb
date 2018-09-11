@@ -1,7 +1,9 @@
 <% if !@user.exercises.blank? %>
 <h1>Here are your favorite exercises:</h1>
-<%=  @user.exercises %>
-<% else %>
+<%  @user.exercises.each do |exercise| %>
+<li> <%= exercise.name %> </li>
+<% end %>
+
 <h1>select a bodypart you would like to work out:</h1>
 <% @categories.each do |category| %>
 <li><%= link_to category.name, category%></li>
