@@ -1,7 +1,8 @@
 class Exercise < ApplicationRecord
   has_many :exercise_muscles
   has_many :muscles, through: :exercise_muscles
-  has_many :categories, through: :exercise_muscles
+  has_one :exercise_category
+  has_one :category, through: :exercise_category
 
 
   def muscle_ids=(arr)
