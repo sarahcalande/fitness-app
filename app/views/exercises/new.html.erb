@@ -8,9 +8,12 @@
   <%= f.label :instructions %>
   <%= f.text_field :instructions %>
 
-  <%= f.label :muscles %>
-  <%= f.collection_check_boxes :muscle_id, Muscle.all, :id, :name %>
+  <%= f.collection_select :category, Category.all, :id, :name  %>
 
+  <br>
+  <%= f.label :muscles %> <br>
+  <%= f.collection_check_boxes :muscles, Muscle.all, :id, :name %>
+  <br>
   <%= f.submit %>
 
 <% end %>

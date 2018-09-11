@@ -24,4 +24,15 @@ class Exercise < ApplicationRecord
     end
   end
 
+  def category=(cat_id)
+    if !cat_id.blank?
+    category_object = Category.find(cat_id)
+    self.category = category_object
+    self.save
+    end
+  end
+
+
+
+
 end
