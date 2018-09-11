@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
-  has_many :exercises_categories
-  has_many :exercises, through: :exercises_categories
+  has_many :exercise_categories
+  has_many :exercises, through: :exercise_categories
+  has_many :muscles, through: :exercises
 end
