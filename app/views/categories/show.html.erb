@@ -1,7 +1,7 @@
 <h1>Body Part Show Page</h1>
 <%= @category.name %>
 <% if @category.muscles != nil  %>
-  <% @category.muscles.uniq.each do |muscle| %>
+  <% @category.muscles.select{|muscle|muscle.category_name == @category.name}.uniq.each do |muscle| %>
     <li> <%= link_to muscle.name, muscle %> </li>
 <% end %>
 <% end %>

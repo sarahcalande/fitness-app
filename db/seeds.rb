@@ -40,3 +40,20 @@ require 'net/http'
 populate_categories
 populate_muscles
 populate_exercise
+
+
+Muscle.find(1).update(category_name: "Arms")
+Muscle.find(2).update(category_name: "Shoulders")
+Muscle.find(3).update(category_name: "Abs")
+Muscle.find(4).update(category_name: "Chest")
+Muscle.find(5).update(category_name: "Arms")
+Muscle.find(6).update(category_name: "Abs")
+Muscle.find(7).update(category_name: "Calves")
+Muscle.find(8).update(category_name: "Legs")
+Muscle.find(9).update(category_name: "Arms")
+Muscle.find(10).update(category_name: "Legs")
+Muscle.find(11).update(category_name: "Legs")
+Muscle.find(12).update(category_name: "Back")
+Muscle.find(13).update(category_name: "Arms")
+Muscle.find(14).update(category_name: "Abs")
+Muscle.find(15).update(category_name: "Calves")
