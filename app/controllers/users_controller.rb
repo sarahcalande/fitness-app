@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def show
     if session[:current_user_id] !=nil
       @user = User.find(session[:current_user_id])
-          render :index
     else
       redirect_to '/login'
     end

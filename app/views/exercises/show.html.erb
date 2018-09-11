@@ -3,6 +3,6 @@
 <%= @exercise.instructions %> <br>
 <% if @exercise.muscles != nil  %>
   <% @exercise.muscles.each do |muscle| %>
-    <li> <%= link_to muscle.name, muscles %> </li>
+    <li> <%= link_to muscle.name, muscle %> </li>
   <% end %>
 <% end %>

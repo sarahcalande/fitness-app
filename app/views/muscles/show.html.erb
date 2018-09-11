@@ -1,4 +1,7 @@
-<h1>Show Page</h1>
-<%= @muscle.name %>
+<h1><%= @muscle.name %></h1>
 <%= @muscle.description %>
-<%= link_to @muscle.exercises.name, exercises_path(@muscle.exercises) %>
+<% if @muscle.exercises != nil  %>
+  <% @muscle.exercises.each do |exercise| %>
+    <li> <%= link_to exercise.name, exercise %> </li>
+<% end %>
+<% end %>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :exercise_muscles
 
   get '/signup', to: 'users#new'
+  post '/login', to: 'users#show'
   get '/login', to: 'sessions#new'
   get '/sessions', to: 'users#index'
   post '/sessions', to: 'sessions#create'
