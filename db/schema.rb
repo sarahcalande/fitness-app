@@ -10,46 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_181010) do
-
-  create_table "muscles", force: :cascade do |t|
-    t.string "name"
-    t.string "body_part"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_fav_workouts", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "workout_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "name"
-    t.string "gender"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "workout_muscles", force: :cascade do |t|
-    t.integer "workout_id"
-    t.integer "muscle_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "workouts", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.text "instructions"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

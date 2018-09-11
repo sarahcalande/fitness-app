@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :muscles
-  resources :user_fav_workouts
-  resources :workouts
+  resources :user_fav_exercises
+  resources :exercises
   resources :users
+  resources :categories
+  resources :exercise_categories
+  resources :exercise_muscles
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'

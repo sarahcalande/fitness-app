@@ -1,0 +1,8 @@
+<%= @exercise.name %> <br>
+<%= @exercise.description %> <br>
+<%= @exercise.instructions %> <br>
+<% if @exercise.muscles != nil  %>
+  <% @exercise.muscles.each do |muscle| %>
+    <li> <%= muscle.name %> </li>
+  <% end %>
+<% end %>

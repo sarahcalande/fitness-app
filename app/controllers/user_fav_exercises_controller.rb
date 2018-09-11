@@ -1,0 +1,2 @@
+class UserFavExercisesController < ApplicationController
+end

@@ -1,2 +1,0 @@
-class UserFavWorkoutsController < ApplicationController
-end
