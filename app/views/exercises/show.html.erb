@@ -1,8 +1,12 @@
-<%= @exercise.name %> <br>
+<h3><%= @exercise.name %> <br></h3>
+<h4>Instructions:</h4>
 <%= @exercise.description %> <br>
 <%= @exercise.instructions %> <br>
+<h4>This exercise works out your:</h4>
 <% if @exercise.muscles != nil  %>
   <% @exercise.muscles.each do |muscle| %>
     <li> <%= link_to muscle.name, muscle %> </li>
   <% end %>
 <% end %>
+
+<%= button_to 'save exercise', user_fav_exercises_path %>

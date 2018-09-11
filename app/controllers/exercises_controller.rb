@@ -43,7 +43,10 @@ class ExercisesController < ApplicationController
 
 
 
-
+def save_to_favs
+  byebug
+  @exercise = UserFavExercise.create
+end
 
   private
   def exercise_params
