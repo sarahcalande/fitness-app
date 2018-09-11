@@ -44,13 +44,6 @@ class ExercisesController < ApplicationController
   end
 
 
-
-def save_to_favs
-  UserFavExercise.create(exercise_id: session[:current_exercise_id], user_id: session[:current_user_id])
-  redirect_to exercise_path(session[:current_exercise_id])
-
-end
-
   private
   def exercise_params
     params.require(:exercise).permit(:name, :description, :instructions, muscle_id: [])

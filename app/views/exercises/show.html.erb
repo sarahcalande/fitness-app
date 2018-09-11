@@ -11,7 +11,7 @@
 
 
 <% if @user.exercises.include?(@exercise) %>
-<%= button_to 'remove exercises from favorites', '/exercises/save_to_favs' %>
+<%= button_to 'remove exercises from favorites', '/exercises/remove_from_favs' %>
 <% else %>
 <%= button_to 'save exercise to favorites', '/exercises/save_to_favs' %>
 <% end %>

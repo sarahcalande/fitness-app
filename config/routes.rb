@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/sessions', to: 'users#index'
   post '/sessions', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  post '/exercises/save_to_favs', to: 'exercises#save_to_favs'
-  delete '/exercises/remove_from_favs', to: 'exercises#remove_from_favs'
+  post '/exercises/save_to_favs', to: 'user_fav_exercises#save_to_favs'
+  post '/exercises/remove_from_favs', to: 'user_fav_exercises#remove_from_favs'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
