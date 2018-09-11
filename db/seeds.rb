@@ -8,6 +8,12 @@
 
 
 
+
+
+Workout.create()
+
+
+###Muscles
 #Abs
 Muscle.create(name: "Abdominals", body_part: "Abs", description: "This area is referred to a Rectus Abdominis and is more commonly seen as the six pack. The main purpose of this muscle group is to bend your body forwards, such as when performing crunches. There are 3 areas to this region, the lower, middle and upper sections. With a variety of exercises you are able to effectively concentrate on all areas for a overall development. Please browse the list of effective exercises on the right hand column.")
 
