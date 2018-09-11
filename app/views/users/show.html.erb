@@ -3,9 +3,9 @@
 <%  @user.exercises.each do |exercise| %>
 <li> <%= exercise.name %> </li>
 <% end %>
+<% end %>
 
 <h1>select a bodypart you would like to work out:</h1>
 <% @categories.each do |category| %>
 <li><%= link_to category.name, category%></li>
-<% end %>
 <% end %>

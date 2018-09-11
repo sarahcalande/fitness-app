@@ -7,6 +7,7 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find(params[:id])
     session[:current_exercise_id] = @exercise.id
+    @user = User.find(session[:current_user_id])
   end
 
   def new
