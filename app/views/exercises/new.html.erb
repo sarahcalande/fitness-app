@@ -8,11 +8,11 @@
   <%= f.label :instructions %>
   <%= f.text_field :instructions %>
 
-  <%= f.collection_select :category, Category.all, :id, :name  %>
+  <%= f.collection_select :category_id, Category.all, :id, :name  %>
 
   <br>
   <%= f.label :muscles %> <br>
-  <%= f.collection_check_boxes :muscles, Muscle.all, :id, :name %>
+  <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name %>
   <br>
   <%= f.submit %>
 
