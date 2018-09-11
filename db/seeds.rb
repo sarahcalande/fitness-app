@@ -48,16 +48,3 @@ require 'net/http'
 populate_categories
 populate_muscles
 populate_exercise
-
-
-
-
-
-
-
-
-
-
-
-
-#

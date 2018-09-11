@@ -1,0 +1,4 @@
+<h1>Show Page</h1>
+<%= @muscle.name %>
+<%= @muscle.description %>
+<%= link_to @muscle.exercises.name, exercises_path(@muscle.exercises) %>

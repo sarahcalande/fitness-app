@@ -10,10 +10,8 @@ class UsersController < ApplicationController
   end
 
   def new
-
     @user = User.new
       render :layout => false
-
   end
 
   def create
@@ -26,6 +24,26 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(exercise_params)
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+def destroy
+  @user = User.find(params[:id])
+  redirect_to users_path
+end
+
+
 
   private
   def user_params

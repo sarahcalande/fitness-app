@@ -1,0 +1,21 @@
+
+
+<h1>Edit your Account</h1>
+<%= form_for @user do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :gender %>
+<%= f.text_field :gender %>
+<%= f.submit %>
+
+
+
+
+<%= button_to 'Delete My Account', @user, method: :delete, data: {confirm: 'Are you sure you want to delete your profile and all data?'} %>
+<% end %>
