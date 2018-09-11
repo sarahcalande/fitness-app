@@ -23,14 +23,6 @@ require 'net/http'
     end
   end
 
-  def populate_muscles
-    parsed_data = parse_data("http://wger.de/api/v2/muscle/")
-    parsed_data["results"].each do |muscle|
-      new_muscle = Muscle.create
-      new_muscle.update(id: muscle["id"], name: muscle["name"])
-    end
-  end
-
   def populate_exercise
     for i in 1..27
       parsed_data = parse_data("http://wger.de/api/v2/exercise/?page=#{i}")
