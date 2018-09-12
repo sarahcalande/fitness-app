@@ -21,9 +21,10 @@
           <li class="nav-section"> <%= link_to "Muscles", muscles_path, class:"nav-section-text" %></li>
           <li class="nav-section"> <%= link_to "Favorites", '/users/:id', class:"nav-section-text" %></li>
         <% else %>
-          <li><%= link_to "Sign in", '/login' %>
+            <li class="login-section"> <%= link_to "Sign Up", '/signup', class:"nav-section-text" %></li>
+                        <li class="login-section"> <%= link_to "Log in", login_path, class:"nav-section-text" %></li>
                 <% end %>
-              </li>
+
             </li>
             </ul>
           </div>
@@ -36,7 +37,6 @@
                  <%= button_to 'logout', '/logout', method: :delete, class: "nav-section-text cover-text" %>
                     <%= yield %>
                 <% else %>
-                 <%= link_to 'log in', login_path%>
                  <%= yield %>
                 <% end %>
               </div>

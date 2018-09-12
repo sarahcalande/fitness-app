@@ -37,6 +37,15 @@ body {
   text-align: center;
 }
 
+.login-section {
+  background-color: #1d1d1d;
+  display: block;
+  width: 50%;
+  float: left;
+  padding: 17px 0px;
+  text-align: center;
+}
+
 .nav-section:hover{
   border-bottom: 2px solid #ffffff;
   cursor: pointer;
@@ -101,6 +110,10 @@ input[type="text"], textarea {
   border-bottom: 2px solid black;
   border: 2px solid white;
   cursor: pointer;
+}
+
+a {
+    color: white;
 }
 
 //
