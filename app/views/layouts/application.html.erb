@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylsheet" type="text/css" href="application.scss"/>
 <html lang="en">
   <head>
     <title>Workoutapp</title>
@@ -10,36 +11,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <header class="container">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
-        <li><%= link_to "Exercises", exercises_path %></li>
-          <li> <%= link_to "Body Parts", categories_path %></li>
-            <li> <%= link_to "Muscles", muscles_path %></li>
-              <li> <%= link_to "Favorites", '/users/:id' %></li>
-              <% else %>
-              <li><%= link_to "Sign in", sign_in_path %>
-                <% end %>
-              </ul>
-    </nav>
-  </header>
 
   <body>
-    <% if logged_in? %>
-    <p> Welcome back </p>
-    <%= button_to 'logout', '/logout', method: :delete %>
-        <%= yield %>
-    <% else %>
-    <%= link_to 'log in', login_path %>
-    <% end %>
-  </body>
+    <div>
+      <ul id="nav-header">
+        <% if logged_in? %>
+          <li class="nav-section"><%= link_to "Exercises", exercises_path, class:"nav-section-text" %></li>
+          <li class="nav-section"> <%= link_to "Body Parts", categories_path, class:"nav-section-text" %></li>
+          <li class="nav-section"> <%= link_to "Muscles", muscles_path, class:"nav-section-text" %></li>
+          <li class="nav-section"> <%= link_to "Favorites", '/users/:id', class:"nav-section-text" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", '/login' %>
+                <% end %>
+              </li>
+            </li>
+            </ul>
+          </div>
 
 
-  </nav>
-</header>
+          <div id="background-img">
+              <div>
+                <% if logged_in? %>
+                  <div id="cover-btn-div">
+                 <%= button_to 'logout', '/logout', method: :delete, class: "nav-section-text cover-text" %>
+                    <%= yield %>
+                <% else %>
+                 <%= link_to 'log in', login_path%>
+                 <%= yield %>
+                <% end %>
+              </div>
+          </div>
+        </div>
+
+
+
+</body>
+
+
+
 </html>
