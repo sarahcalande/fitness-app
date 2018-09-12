@@ -12,7 +12,30 @@
   }
 }
 
+body {
+  margin: 0;
+  font-family: arial;
+}
 
+#nav-header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100;
+}
+
+.nav-section {
+  background-color: #1d1d1d;
+  display: block;
+  width: 25%;
+  float: left;
+  padding: 17px 0px;
+  text-align: center;
+}
+
+.nav-section:hover{
+  border-bottom: 2px solid #ffffff
+}
 
 .exercise {
   width: 30%;
