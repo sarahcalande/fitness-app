@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(exercise_params)
+    if @user.update(user_params)
       redirect_to @user
     else
       render :edit
@@ -46,6 +46,6 @@ end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :name, :email, :gender)
+    params.require(:user).permit(:username, :name, :email, :gender, :password, :password_confirmation)
   end
 end
