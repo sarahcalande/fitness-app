@@ -3,6 +3,8 @@ class Exercise < ApplicationRecord
   has_many :muscles, through: :exercise_muscles
   has_one :exercise_category
   has_one :category, through: :exercise_category
+  validates :name, presence: true
+  validates :description, presence: true
 
 
   def muscle_ids=(arr)
