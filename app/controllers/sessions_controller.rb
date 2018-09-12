@@ -1,17 +1,18 @@
 class SessionsController < ApplicationController
 
   def new
-    render :layout => false
+    @user = User.new
   end
 
 
   def create
-    @user = User.find_by(username:params['username'])
-    if @user && @user.authenticate(params['password'])
+    @user = User.find_by(name: session_params[:username])
+    if @user && @user.authenticate(session_params[:password])
       session[:current_user_id] = @user.id
       redirect_to user_path(@user)
     else
-      redirect_to '/login'
+      flash[:notice] = "Invalid username/password combination"
+      render :new
     end
   end
 
@@ -19,5 +20,14 @@ class SessionsController < ApplicationController
     session.delete :current_user_id
     redirect_to '/login'
   end
+
+
+private
+
+def session_params
+  params.require(:session).permit(:username, :password)
+end
+
+
 
 end

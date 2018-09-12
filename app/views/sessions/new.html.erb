@@ -1,7 +1,11 @@
+<%= flash.notice %>
+
 <%= form_for(:session, url: login_path) do |f| %>
-<%= text_field_tag :username %>
-<%= text_field_tag :password %>
-<%= submit_tag 'log in' %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit 'log in' %>
 <% end %>
 
 <%= button_to 'sign up', '/signup', method: 'get' %>

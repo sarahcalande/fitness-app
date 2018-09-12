@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
   resources :muscles
   resources :user_fav_exercises
   resources :exercises
@@ -7,11 +8,12 @@ Rails.application.routes.draw do
   resources :exercise_categories
   resources :exercise_muscles
 
+
   get '/signup', to: 'users#new'
   post '/login', to: 'sessions#create'
   get '/login', to: 'sessions#new'
-  get '/sessions', to: 'users#index'
-  post '/sessions', to: 'sessions#create'
+  # get '/sessions', to: 'users#index'
+  # post '/sessions', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   post '/exercises/save_to_favs', to: 'user_fav_exercises#save_to_favs'
   post '/exercises/remove_from_favs', to: 'user_fav_exercises#remove_from_favs'
