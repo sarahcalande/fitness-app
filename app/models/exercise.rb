@@ -24,4 +24,10 @@ class Exercise < ApplicationRecord
     end
   end
 
+  def category_id
+    self.category
+  end
+
+
+
 end

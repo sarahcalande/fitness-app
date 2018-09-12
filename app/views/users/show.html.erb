@@ -1,7 +1,7 @@
 <% if !@user.exercises.blank? %>
 <h1>Here are your favorite exercises:</h1>
 <%  @user.exercises.each do |exercise| %>
-<li> <%= exercise.name %> </li>
+<li> <%= link_to exercise.name, exercise %> </li>
 <% end %>
 <% end %>
 
