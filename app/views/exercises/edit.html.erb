@@ -1,21 +1,25 @@
-<%= form_for @exercise do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<% if @exercise.creator_id == session[:current_user_id] %>
+  <%= form_for @exercise do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-  <%= f.label :instructions %>
-  <%= f.text_field :instructions %>
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
 
-  <%= f.collection_select :category_id, Category.all, :id, :name  %>
+    <%= f.collection_select :category_id, Category.all, :id, :name  %>
 
-  <br>
-  <%= f.label :muscles %> <br>
-  <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name %>
-  <br>
-  <%= f.submit "update test"%>
+    <br>
+    <%= f.label :muscles %> <br>
+    <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name, options = {checked: @exercise.muscles.map(&:id)}%>
+    <br>
+    <%= f.submit "update test"%>
 
-  <% end %>
+    <% end %>
 
-<%= button_to 'Delete This Exercise', exercise_path(@exercise), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <%= button_to 'Delete This Exercise', exercise_path(@exercise), method: :delete, data: {confirm: 'Are you sure?'} %>
+<% else %>
+  <h1>This is not your post</h1>
+<% end %>

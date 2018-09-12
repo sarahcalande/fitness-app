@@ -8,6 +8,7 @@ class Exercise < ApplicationRecord
 
 
   def muscle_ids=(arr)
+    self.muscles.clear
     muscle_ids = arr.select{|id| !id.blank?}
     muscle_ids.each do |id|
       self.muscles << Muscle.find(id)

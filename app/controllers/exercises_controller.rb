@@ -18,6 +18,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.new(exercise_params)
       if @exercise.valid?
         @exercise.save
+        @exercise.update(creator_id: session[:current_user_id])
         redirect_to @exercise
       else
         render :new

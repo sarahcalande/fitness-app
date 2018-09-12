@@ -3,23 +3,23 @@
 </div>
 
 <ul>
-<%= form_for @exercise do |f| %>
-<%= f.label :name %> <br>
-<%= f.text_field :name %> <br>
+  <%= form_for @exercise do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-<%= f.label :description %> <br>
-<%= f.text_field :description, class: 'form-control'%><br>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-  <%= f.label :instructions %><br>
-  <%= f.text_field :instructions %><br>
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
 
-  <%= f.collection_select :category_id, Category.all, :id, :name  %>
+    <%= f.collection_select :category_id, Category.all, :id, :name  %>
 
-  <br>
-  <%= f.label :muscles %> <br>
-  <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name %>
-  <br>
-  <%= f.submit class: "btn btn-primary"%>
+    <br>
+    <%= f.label :muscles %> <br>
+    <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name, options = {checked: @exercise.muscles.map(&:id)}%>
+    <br>
+    <%= f.submit "update test"%>
 
-<% end %>
+    <% end %>
 </ul>
