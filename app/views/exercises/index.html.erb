@@ -1,3 +1,12 @@
+<div class="title-container"
+<h1>Exercises</h1>
+<%= link_to "New Exercise", new_exercise_path, class: "btn btn-default" %>
+</div>
+
+
+<div class="exercises">
 <% @exercises.each do |exercise| %>
 <li><%= link_to exercise.name, exercise %></li>
+        <%= link_to "Edit", edit_exercise_path(exercise), class: "btn btn-default"  %>
+          <%= link_to "Delete", '/users/:id', data: {confirm: "Are you sure?"}, method: :delete  %>
 <% end %>

@@ -1,7 +1,6 @@
 <h1>Select an Exercise for <%= @muscle.name %></h1>
 <%= @muscle.description %>
 <% if @muscle.exercises != nil  %>
-<h3>Muscles worked out</h3>
   <% @muscle.exercises.each do |exercise| %>
     <li> <%= link_to exercise.name, exercise %> </li>
 <% end %>

@@ -1,16 +1,22 @@
+<div class="title-container">
+  <h1>New Exercise</h1>
+</div>
+
+<ul>
 <%= form_for @exercise do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<%= f.label :name %> <br>
+<%= f.text_field :name %> <br>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+<%= f.label :description %> <br>
+<%= f.text_field :description, class: 'form-control'%><br>
 
-  <%= f.label :instructions %>
-  <%= f.text_field :instructions %>
+  <%= f.label :instructions %><br>
+  <%= f.text_field :instructions %><br>
 
-  <%= f.label :muscles %>
-  <%= f.collection_check_boxes :muscle_id, Muscle.all, :id, :name %>
+ <%= f.label :muscles %><br>
+  <%= f.collection_check_boxes :muscles, Muscle.all, :id, :name %><br>
 
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-primary"%>
 
 <% end %>
+</ul>

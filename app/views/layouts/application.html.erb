@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Workoutapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
+  <header class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+        <li><%= link_to "Exercises", exercises_path %></li>
+          <li> <%= link_to "Body Parts", categories_path %></li>
+            <li> <%= link_to "Muscles", muscles_path %></li>
+              <li> <%= link_to "Favorites", '/users/:id' %></li>
+              <% else %>
+              <li><%= link_to "Sign in", sign_in_path %>
+                <% end %>
+              </ul>
+    </nav>
+  </header>
 
   <body>
     <% if logged_in? %>
@@ -15,7 +35,11 @@
     <%= button_to 'logout', '/logout', method: :delete %>
         <%= yield %>
     <% else %>
-    <%= link_to 'log in', '/login' %>
+    <%= link_to 'log in', login_path %>
     <% end %>
   </body>
+
+
+  </nav>
+</header>
 </html>

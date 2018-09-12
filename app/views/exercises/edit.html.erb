@@ -11,7 +11,7 @@
   <%= f.text_field :instructions %>
 
   <%= f.label :muscles %>
-  <%= f.collection_check_boxes :muscle_id, Muscle.all, :id, :name %>
+  <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name %>
 
   <%= f.submit %>
 
