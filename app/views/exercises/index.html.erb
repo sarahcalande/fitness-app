@@ -8,5 +8,5 @@
 <% @exercises.each do |exercise| %>
 <li><%= link_to exercise.name, exercise %></li>
         <%= link_to "Edit", edit_exercise_path(exercise), class: "btn btn-default"  %>
-          <%= link_to "Delete", '/users/:id', data: {confirm: "Are you sure?"}, method: :delete  %>
+          <%= link_to 'Delete', exercise_path(exercise), method: :delete, data: {confirm: 'Are you sure?'}  %>
 <% end %>

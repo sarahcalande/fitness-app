@@ -1,5 +1,3 @@
-#delete button on here
-
 <%= form_for @exercise do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -10,11 +8,14 @@
   <%= f.label :instructions %>
   <%= f.text_field :instructions %>
 
-  <%= f.label :muscles %>
+  <%= f.collection_select :category_id, Category.all, :id, :name  %>
+
+  <br>
+  <%= f.label :muscles %> <br>
   <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name %>
+  <br>
+  <%= f.submit "update test"%>
 
-  <%= f.submit %>
+  <% end %>
 
-
-<%= button_to 'Delete This Exercise', @exercise, method: :delete, data: {confirm: 'Are you sure?'} %>
-<% end %>
+<%= button_to 'Delete This Exercise', exercise_path(@exercise), method: :delete, data: {confirm: 'Are you sure?'} %>
