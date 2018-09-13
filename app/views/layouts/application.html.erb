@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-
+<center>
   <body>
     <div>
       <ul id="nav-header">
@@ -20,6 +20,7 @@
           <li class="nav-section"> <%= link_to "Body Parts", categories_path, class:"nav-section-text" %></li>
           <li class="nav-section"> <%= link_to "Muscles", muscles_path, class:"nav-section-text" %></li>
           <li class="nav-section"> <%= link_to "Favorites", "/users/#{session[:current_user_id]}", class:"nav-section-text" %></li>
+          <li class="nav-section"> <%=  link_to 'logout', '/logout', method: :delete, class: "nav-section-text cover-text" %></li>
         <% else %>
             <li class="login-section"> <%= link_to "Sign Up", '/signup', class:"nav-section-text" %></li>
                         <li class="login-section"> <%= link_to "Log in", login_path, class:"nav-section-text" %></li>
@@ -32,13 +33,11 @@
 
           <div id="background-img">
               <div>
-                <% if logged_in? %>
+                <br>
+        
                   <div id="cover-btn-div">
-                 <%= button_to 'logout', '/logout', method: :delete, class: "nav-section-text cover-text" %>
-                    <%= yield %>
-                <% else %>
                  <%= yield %>
-                <% end %>
+
               </div>
           </div>
         </div>
@@ -47,6 +46,6 @@
 
 </body>
 
-
+</center>
 
 </html>

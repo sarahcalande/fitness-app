@@ -4,6 +4,11 @@ class Muscle < ApplicationRecord
 
 
 
+    def self.find_muscles_by_category(name)
+      Muscle.all.select do |muscle|
+        muscle.category == name
+      end
+    end
 
 
 end

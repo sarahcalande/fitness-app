@@ -32,7 +32,7 @@ body {
 .nav-section {
   background-color: #1d1d1d;
   display: block;
-  width: 25%;
+  width: 20%;
   float: left;
   padding: 17px 0px;
   text-align: center;
@@ -73,6 +73,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 50px;
 }
 
 input[type="text"], textarea {
@@ -121,6 +122,15 @@ img {
 a {
     color: white;
 }
+
+
+
+.square {
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%; }
+
+
 
 //
 // .exercise {
