@@ -1,0 +1,21 @@
+<h1> <%= @routine.name %> </h1>
+<ul>
+  <li>
+    Week Day: <%= @routine.week_day %>
+  </li>
+  <li>
+    Sets: <%= @routine.sets %>
+  </li>
+  <li>
+    Reps: <%= @routine.reps %>
+  </li>
+  <li>
+    Weight: <%= @routine.weight %>
+  </li>
+    <h3>Exercies</h3>
+    <% @routine.exercises.each do |exercise| %>
+    <li> <%= link_to exercise.name, exercise %> </li>
+    <% end %>
+</ul>
+<%= button_to "Edit", edit_routine_path(@routine), method: :get %>
+<%= button_to "Delete", @routine, method: :delete %>

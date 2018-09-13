@@ -1,0 +1,33 @@
+<ul>
+  <h1>New Routine</h1>
+<%= form_for @routine do |f| %>
+<li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+</li>
+<li>
+    <%= f.label :week_day %>
+    <%= f.text_field :name %>
+</li>
+<li>
+    <%= f.label :exercises %>
+    <%= f.collection_select(:exercise_ids, Exercise.all, :id, :name,{}, {:multiple => true}) %>
+</li>
+<li>
+    <%= f.label :sets %>
+    <%= f.text_field :sets %>
+</li>
+<li>
+    <%= f.label :reps %>
+    <%= f.text_field :reps %>
+</li>
+<li>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+</li>
+    <%= f.submit "Create"%>
+
+
+    <% end %>
+
+</ul>

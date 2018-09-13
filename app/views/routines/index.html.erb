@@ -1,0 +1,11 @@
+<h1>Your Existing Routines</h1>
+
+  <%= button_to "Create a New Routine", new_routine_path, method: :get %>
+
+<% if @routines %>
+  <% @routines.each do |routine| %>
+  <%= link_to routine.name, routine %>
+  <% end %>
+<% else %>
+  <h1>You have no routines</h1>
+<% end %>

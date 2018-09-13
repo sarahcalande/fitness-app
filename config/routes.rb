@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :exercises, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :users, only: [:show, :new, :create, :destroy, :update, :edit]
   resources :categories, only: [:index, :show]
+  resources :routines
 
 
   get '/signup', to: 'users#new'
