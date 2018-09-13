@@ -20,7 +20,16 @@
           <li class="nav-section"> <%= link_to "Body Parts", categories_path, class:"nav-section-text" %></li>
           <li class="nav-section"> <%= link_to "Muscles", muscles_path, class:"nav-section-text" %></li>
           <li class="nav-section"> <%= link_to "Favorites", "/users/#{session[:current_user_id]}", class:"nav-section-text" %></li>
-          <li class="nav-section"> <%=  link_to 'logout', '/logout', method: :delete, class: "nav-section-text cover-text" %></li>
+          <li class="nav-section">
+          <div class="dropdown">
+                      account
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+            <%=  link_to 'Edit', edit_user_path(session[:current_user_id]), class: "nav-section-text cover-text" %>
+            <%=  link_to 'logout', '/logout', method: :delete, class: "nav-section-text cover-text" %></li>
+            </div>
+          </div>
         <% else %>
             <li class="login-section"> <%= link_to "Sign Up", '/signup', class:"nav-section-text" %></li>
                         <li class="login-section"> <%= link_to "Log in", login_path, class:"nav-section-text" %></li>
@@ -34,7 +43,7 @@
           <div id="background-img">
               <div>
                 <br>
-        
+
                   <div id="cover-btn-div">
                  <%= yield %>
 

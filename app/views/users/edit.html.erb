@@ -4,19 +4,33 @@
     <% end %>
 <% end %>
 
-<h1>Sign Up</h1>
+<h1>Edit Your Profile</h1>
+<ul>
 <%= form_for @user do |f| %>
+<li>
 <%= f.label :username %>
 <%= f.text_field :username %>
+</li>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<li>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+</li>
 <%= f.label :email %>
 <%= f.text_field :email %>
+<li>
 <%= f.label :name %>
 <%= f.text_field :name %>
+</li>
 <%= f.label :gender %>
 <%= f.text_field :gender %>
+<li>
 <%= f.submit %>
-
+</li>
+</ul>
 <% end %>
+
 
 
 

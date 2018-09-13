@@ -2,24 +2,34 @@
   <h1>New Exercise</h1>
 </div>
 
+
+
 <ul>
-  <%= form_for @exercise do |f| %>
+
+<%= form_for @exercise do |f| %>
+<li>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+</li>
     <%= f.label :description %>
     <%= f.text_field :description %>
-
+<li>
     <%= f.label :instructions %>
     <%= f.text_field :instructions %>
-
+</li>
+    <%= f.label 'Body Part' %>
     <%= f.collection_select :category_id, Category.all, :id, :name  %>
 
-    <br>
+
+  <li>
     <%= f.label :muscles %> <br>
+    <span class="checkmark">
     <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name, options = {checked: @exercise.muscles.map(&:id)}%>
-    <br>
-    <%= f.submit "update test"%>
+  </span>
+</li>
+    <%= f.submit "Update"%>
+
 
     <% end %>
+
 </ul>
