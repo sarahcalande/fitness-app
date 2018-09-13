@@ -37,10 +37,10 @@ class UsersController < ApplicationController
     end
   end
 
-def destroy
-  @user = User.find(params[:id])
-  redirect_to users_path
-end
+  def destroy
+    @user = User.find(params[:id])
+    redirect_to users_path
+  end
 
 
 

@@ -50,14 +50,4 @@ class ExercisesController < ApplicationController
   def exercise_params
     params.require(:exercise).permit(:name, :description, :instructions, :category_id, muscle_ids: [])
   end
-
-
-
-
-
-
-
-
-
-
 end
