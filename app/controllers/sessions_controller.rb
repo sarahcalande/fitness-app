@@ -2,6 +2,11 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new
+    if logged_in? && User.find(session[:current_user_id]).blank?
+      session.delete :current_user_id
+    elsif logged_in?
+      redirect_to user_path(session[:current_user_id])
+    end
   end
 
 
