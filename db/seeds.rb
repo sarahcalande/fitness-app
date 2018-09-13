@@ -308,3 +308,43 @@ Exercise.find(220).update(image_url: "https://www.youtube.com/embed/y-wV4Venusw"
 Exercise.find(221).update(image_url: "https://www.youtube.com/embed/y-wV4Venusw")
 Exercise.find(222).update(image_url: "https://www.youtube.com/embed/y-wV4Venusw")
 Exercise.find(223).update(image_url: "https://www.youtube.com/embed/y-wV4Venusw")
+
+
+def update_exercise_description
+  Exercise.all.each do |exercise|
+    e =  exercise.description
+    e =  e.gsub("</p>","")
+    e =  e.gsub("<p>","")
+    e =  e.gsub("</li>","")
+    e =  e.gsub("<li>","")
+    e =  e.gsub("<em>","")
+    e =  e.gsub("</em>","")
+    e =  e.gsub("<ol>","")
+    e =  e.gsub("</ol>","")
+    e =  e.gsub("</ul>","")
+    e =  e.gsub("<ul>","")
+    e =  e.gsub("\n", " ")
+
+    exercise.update(description: e)
+  end
+end
+
+
+update_exercise_description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
