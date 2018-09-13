@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    if session[:current_user_id] !=nil
+    if session[:current_user_id] !=nil && User.exists?(session[:current_user_id])
       @user = User.find(session[:current_user_id])
       @categories = Category.all
     else
