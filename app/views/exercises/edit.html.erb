@@ -1,23 +1,38 @@
 <% if @exercise.creator_id == session[:current_user_id] %>
-  <%= form_for @exercise do |f| %>
+<ul>
+
+<%= form_for @exercise do |f| %>
+<li>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+</li>
     <%= f.label :description %>
     <%= f.text_field :description %>
-
+<li>
     <%= f.label :instructions %>
     <%= f.text_field :instructions %>
+</li>
 
+<li>
+    <%= f.label :youtube_video_link %>
+    <%= f.text_field :image_url %>
+</li>
+    <%= f.label 'Body Part' %>
     <%= f.collection_select :category_id, Category.all, :id, :name  %>
 
-    <br>
+  <li>
     <%= f.label :muscles %> <br>
+    <span class="checkmark">
     <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name, options = {checked: @exercise.muscles.map(&:id)}%>
-    <br>
-    <%= f.submit "update test"%>
+  </span>
+</li>
+    <%= f.submit "Update"%>
+
 
     <% end %>
+
+</ul>
+
 
   <%= button_to 'Delete This Exercise', exercise_path(@exercise), method: :delete, data: {confirm: 'Are you sure?'} %>
 <% else %>

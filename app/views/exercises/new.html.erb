@@ -17,9 +17,13 @@
     <%= f.label :instructions %>
     <%= f.text_field :instructions %>
 </li>
+
+<li>
+    <%= f.label :youtube_video_link %>
+    <%= f.text_field :image_url %>
+</li>
     <%= f.label 'Body Part' %>
     <%= f.collection_select :category_id, Category.all, :id, :name  %>
-
 
   <li>
     <%= f.label :muscles %> <br>
@@ -27,7 +31,7 @@
     <%= f.collection_check_boxes :muscle_ids, Muscle.all, :id, :name, options = {checked: @exercise.muscles.map(&:id)}%>
   </span>
 </li>
-    <%= f.submit "Update"%>
+    <%= f.submit "Create"%>
 
 
     <% end %>
