@@ -8,11 +8,14 @@
 
 
 
-<div class="exercises">
-<% @exercises.each do |exercise| %>
-<li><%= link_to exercise.name, exercise %></li>
-      <% if exercise.creator_id == session[:current_user_id] %>
-        <%= button_to "Edit", edit_exercise_path(exercise), method: :get, class: "btn btn-default"  %>
-        <%= button_to 'Delete', exercise_path(exercise), method: :delete, data: {confirm: 'Are you sure?'}  %>
-      <% end %>
-<% end %>
+<div class="container">
+  <% @categories.each do |category| %>
+  <div class="testing"><h1><%= category.name %></h1>
+  <% category.exercises.each do |exercise| %>
+  <li><%= link_to exercise.name, exercise %>
+        <% if exercise.creator_id == session[:current_user_id] %>
+          <%= button_to "Edit", edit_exercise_path(exercise), method: :get, class: "btn btn-default"  %>
+          <%= button_to 'Delete', exercise_path(exercise), method: :delete, data: {confirm: 'Are you sure?'}  %>
+        <% end %></li>
+  <% end %></div>
+  <% end %>
