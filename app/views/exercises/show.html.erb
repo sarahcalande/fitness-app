@@ -1,5 +1,7 @@
 <h3><%= @exercise.name %> <br></h3>
+<% if !@exercise.image_url.blank? %>
 <iframe src='<%= @exercise.image_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+<% end %>
 <h4>Instructions:</h4>
 <%= @exercise.description %> <br>
 <%= @exercise.instructions %> <br>
