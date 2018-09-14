@@ -1,21 +1,31 @@
+<style>
+  .testing {
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+    border-radius: 20px;
+    margin-left: 2%;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+</style>
 
 <h1>Exercises</h1>
 <%= button_to "New Exercise", new_exercise_path, class: "btn btn-default", method: :get%>
 
-
-
-
-
-
-
 <div class="container">
   <% @categories.each do |category| %>
-  <div class="testing"><h1><%= category.name %></h1>
-  <% category.exercises.each do |exercise| %>
-  <li><%= link_to exercise.name, exercise %>
+  <div class="testing"><h2><%= category.name %></h2>
+    <% category.exercises.each do |exercise| %>
+    <div id="exercise-links">
+    <li><%= link_to exercise.name, exercise %>
+    </div>
         <% if exercise.creator_id == session[:current_user_id] %>
           <%= button_to "Edit", edit_exercise_path(exercise), method: :get, class: "btn btn-default"  %>
           <%= button_to 'Delete', exercise_path(exercise), method: :delete, data: {confirm: 'Are you sure?'}  %>
         <% end %></li>
-  <% end %></div>
-  <% end %>
+      <% end %>
+  </div>
+<% end %>

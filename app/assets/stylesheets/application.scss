@@ -65,7 +65,7 @@ body {
   text-align: center;
   color: white;
   text-transform: lowercase;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 
@@ -79,6 +79,7 @@ body {
 /* Dropdown container - needed to position the dropdown content */
 .dropdown {
     overflow: hidden;
+    font-size: 30px;
 }
 
 /* Style the dropdown button to fit inside the topnav */
@@ -88,7 +89,7 @@ body {
   text-align: center;
   color: white;
   text-transform: lowercase;
-  font-size: 15px;
+  font-size: 20px;
     padding: -2px -2px;
 }
 
@@ -172,12 +173,13 @@ body {
 #background-img {
   // background-image: url("Unknown.jpeg");
   display: block;
-  width: 50%;
+  width: 90%;
   height: 80vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px;
+  padding-top: 100px;
 }
 
 input[type="text"], textarea {
