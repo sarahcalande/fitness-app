@@ -15,15 +15,15 @@
 </li>
 <li>
     <%= f.label :sets %>
-    <%= f.text_field :sets %>
+    <%= f.select :sets, (0..100) %>
 </li>
 <li>
     <%= f.label :reps %>
-    <%= f.text_field :reps %>
+    <%= f.select :reps, (0..100) %>
 </li>
 <li>
-    <%= f.label :weight %>
-    <%= f.text_field :weight %>
+    <%= f.label :weight_pounds %>
+    <%= f.select :weight, (0..1000) %>
 </li>
     <%= f.submit "Create"%>
 

@@ -1,30 +1,30 @@
 <ul>
   <h1>Edit Routine</h1>
-<%= form_for @routine do |f| %>
-<li>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-</li>
-<li>
-    <%= f.label :week_day %>
-    <%= f.text_field :week_day %>
-</li>
-<li>
-    <%= f.label :exercises %>
-    <%= f.collection_select(:exercise_ids, Exercise.all, :id, :name,{}, {:multiple => true}) %>
-</li>
-<li>
-    <%= f.label :sets %>
-    <%= f.text_field :sets %>
-</li>
-<li>
-    <%= f.label :reps %>
-    <%= f.text_field :reps %>
-</li>
-<li>
-    <%= f.label :weight %>
-    <%= f.text_field :weight %>
-</li>
+  <%= form_for @routine do |f| %>
+  <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+  </li>
+  <li>
+      <%= f.label :week_day %>
+      <%= f.text_field :name %>
+  </li>
+  <li>
+      <%= f.label :exercises %>
+      <%= f.collection_select(:exercise_ids, Exercise.all, :id, :name,{}, {:multiple => true}) %>
+  </li>
+  <li>
+      <%= f.label :sets %>
+      <%= f.select :sets, (0..100) %>
+  </li>
+  <li>
+      <%= f.label :reps %>
+      <%= f.select :reps, (0..100) %>
+  </li>
+  <li>
+      <%= f.label :weight_pounds %>
+      <%= f.select :weight, (0..1000) %>
+  </li>
     <%= f.submit "Update"%>
 
 
